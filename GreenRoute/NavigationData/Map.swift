@@ -70,5 +70,8 @@ extension MapView {
         }
     }
 
-    
+    func focusLocation(coordinate: CLLocationCoordinate2D, animated: Bool = true) {
+            let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+            mapView.setRegion(region, animated: animated)
+        }
 }

@@ -8,9 +8,15 @@
 import SwiftUI
 
 struct Navigation: View {
+    @State private var fullscreen = false
     var body: some View {
         MapView()
-            .ignoresSafeArea()
+            .animation(.easeInOut(duration: 0.4))
+            .frame(width: fullscreen ? 440:420 , height: fullscreen ? 1000: 200)
+            .onTapGesture {
+                fullscreen = true
+            }
+          
     }
 }
 
